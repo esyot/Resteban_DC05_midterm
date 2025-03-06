@@ -1,18 +1,9 @@
 <template>
   <header>
     <ul>
-      <Link :href="'/'" class="link">
-        <li><span>Home</span></li>
-      </Link>
-      <Link :href="'/cars'" class="link">
-        <li><span>Cars</span></li>
-      </Link>
-      <Link :href="'/bidders'" class="link">
-        <li><span>Bidders</span></li>
-      </Link>
-      <Link :href="'/biddings'" class="link">
-        <li><span>Biddings</span></li>
-      </Link>
+      <li @click="redirectTo('/')"><span>Home</span></li>
+      <li @click="redirectTo('/cars')"><span>Cars</span></li>
+      <li @click="redirectTo('/bidders')"><span>Bidders</span></li>
     </ul>
   </header>
 
@@ -20,12 +11,15 @@
 </template>
 
 <script>
-import { Link } from "@inertiajs/inertia-vue3";
+import { Inertia } from "@inertiajs/inertia";
 
 export default {
   name: "Layout",
-  components: {
-    Link,
+
+  methods: {
+    redirectTo(link) {
+      Inertia.visit(link, { method: "get", preserveState: true });
+    },
   },
 };
 </script>
