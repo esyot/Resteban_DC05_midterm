@@ -18,7 +18,7 @@ export default {
 
   methods: {
     redirectTo(link) {
-      Inertia.visit(link, { method: "get", preserveState: true });
+      Inertia.get(link);
     },
   },
 };
