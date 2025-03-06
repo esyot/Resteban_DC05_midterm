@@ -28,7 +28,7 @@ export default {
   <div>
     <input
       type="text"
-      placeholder="Search a car"
+      placeholder="Search a bidder"
       v-model="searchValue"
       @input="searchCar(searchValue)"
     />
